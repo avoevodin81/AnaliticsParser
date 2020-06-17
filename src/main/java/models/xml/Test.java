@@ -11,6 +11,9 @@ public class Test {
     @Attribute(name = "preserve-order", required=false)
     String preserveOrder;
 
+    @Element(required = false)
+    Parameter parameter;
+
     @Path("classes")
     @ElementList(inline = true, required = false)
     List<TestClass> testClasses;
@@ -18,6 +21,14 @@ public class Test {
     @Path("classes")
     @Element(required = false)
     TestClass testClass;
+
+    public Parameter getParameter() {
+        return parameter;
+    }
+
+    public void setParameter(Parameter parameter) {
+        this.parameter = parameter;
+    }
 
     public List<TestClass> getTestClasses() {
         return testClasses;

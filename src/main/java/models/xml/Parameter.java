@@ -3,9 +3,9 @@ package models.xml;
 import org.simpleframework.xml.Attribute;
 
 public class Parameter {
-    @Attribute
+    @Attribute(required = false)
     String name;
-    @Attribute
+    @Attribute(required = false)
     String value;
 
     public String getName() {
