@@ -14,6 +14,8 @@ public class PropertyUtils {
     public static final String USER_LOGIN = "user.login";
     public static final String USER_PASSWORD = "user.password";
 
+    public static final String TEST_IS_NOT_EXECUTED = "test.isNotExecuted";
+
     public static final String FILE_INPUT = "file.input";
     public static final String FILE_OUTPUT = "file.output";
 

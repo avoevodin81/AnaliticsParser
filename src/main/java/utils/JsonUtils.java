@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class JsonUtils {
 
-    public static List<String> getTestNames(String responseResult) {
+    public static List<String> getFailedTestNames(String responseResult) {
         //create model
         ObjectMapper mapper = new ObjectMapper();
         List<AnaliticsModel> participantJsonList = null;
@@ -32,5 +32,21 @@ public class JsonUtils {
     private static String getTestName(String fullName) {
         int index = fullName.lastIndexOf(".");
         return fullName.substring(0, index);
+    }
+
+    public static List<String> getTestNames(String responseResult) {
+        //create model
+        ObjectMapper mapper = new ObjectMapper();
+        List<AnaliticsModel> participantJsonList = null;
+        try {
+            participantJsonList = mapper.readValue(responseResult, new TypeReference<List<AnaliticsModel>>() {
+            });
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        //create list of tests
+        return participantJsonList.stream()
+                .map(AnaliticsModel::getName).map(JsonUtils::getTestName).collect(Collectors.toList());
     }
 }
