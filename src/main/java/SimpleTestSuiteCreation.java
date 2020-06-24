@@ -25,7 +25,7 @@ public class SimpleTestSuiteCreation {
         List<Test> tests = new ArrayList<>();
         notPassedTests.forEach(testName -> {
             Test test = new Test();
-            test.setName(testName);
+            test.setName(testName.substring(testName.lastIndexOf('.') + 1));
             TestClass testClass = new TestClass();
             testClass.setName(testName);
             test.setTestClass(testClass);
