@@ -18,6 +18,7 @@ public class PropertyUtils {
 
     public static final String FILE_INPUT = "file.input";
     public static final String FILE_OUTPUT = "file.output";
+    public static final String FILE_TEMPLATE = "file.template";
 
     private static Properties prop = initPropertyData("src/main/resources/config.properties");
 

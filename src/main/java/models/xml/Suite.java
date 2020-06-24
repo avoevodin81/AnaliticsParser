@@ -9,19 +9,29 @@ import java.util.List;
 public class Suite {
     @Attribute
     private String name;
-    @Attribute
+    @Attribute(required = false)
     private String verbose;
     @Attribute
     private String parallel;
     @Attribute(name = "thread-count")
     private String threadCount;
+    @Attribute(name = "data-provider-thread-count", required = false)
+    private String dataProviderThreadCount;
     @Path("listeners")
-    @ElementList(inline=true)
+    @ElementList(required = false, inline=true)
     List<Listener> listeners;
     @Element
     Parameter parameter;
-    @ElementList(inline=true)
+    @ElementList(required = false, inline=true)
     List<Test> tests;
+
+    public String getDataProviderThreadCount() {
+        return dataProviderThreadCount;
+    }
+
+    public void setDataProviderThreadCount(String dataProviderThreadCount) {
+        this.dataProviderThreadCount = dataProviderThreadCount;
+    }
 
     public List<Test> getTests() {
         return tests;

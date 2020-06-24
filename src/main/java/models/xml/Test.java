@@ -10,9 +10,14 @@ public class Test {
     String name;
     @Attribute(name = "preserve-order", required=false)
     String preserveOrder;
+    @Attribute(required = false)
+    String parallel;
 
     @Element(required = false)
     Parameter parameter;
+
+    @Element(name = "package", required = false)
+    Package aPackage;
 
     @Path("classes")
     @ElementList(inline = true, required = false)
@@ -21,6 +26,22 @@ public class Test {
     @Path("classes")
     @Element(required = false)
     TestClass testClass;
+
+    public Package getaPackage() {
+        return aPackage;
+    }
+
+    public void setaPackage(Package aPackage) {
+        this.aPackage = aPackage;
+    }
+
+    public String getParallel() {
+        return parallel;
+    }
+
+    public void setParallel(String parallel) {
+        this.parallel = parallel;
+    }
 
     public Parameter getParameter() {
         return parameter;

@@ -11,8 +11,12 @@ public class XmlUtils {
     private static Serializer serializer = new Persister();
 
     public static Suite readTestSuite() {
+        return readTestSuite(PropertyUtils.getPropertyData(PropertyUtils.FILE_INPUT));
+    }
+
+    public static Suite readTestSuite(String fileInput) {
         //read source xml
-        File source = new File(PropertyUtils.getPropertyData(PropertyUtils.FILE_INPUT));
+        File source = new File(fileInput);
         Suite suite = new Suite();
         try {
             suite = serializer.read(Suite.class, source);

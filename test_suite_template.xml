@@ -1,0 +1,8 @@
+<suite name="Billing Agent Default" verbose="1" parallel="tests" thread-count="4096">
+    <listeners>
+        <listener class-name="class-name"/>
+        <listener class-name="class-name"/>
+    </listeners>
+    <parameter name="timeshift-scenario-mode" value="test"/>
+    <test name="test-name"><classes><class name="class-name"/></classes></test>
+</suite>
