@@ -1,10 +1,1 @@
-<suite name="Suite Name" verbose="1" parallel="tests" thread-count="4096">
-    <listeners>
-        <listener class-name="listener1"/>
-        <listener class-name="listener2"/>
-    </listeners>
-    <parameter name="timeshift-scenario-mode" value="test"/>
-
-    <test name="TestName"><classes><class name="test_path"/></classes></test>
-
-</suite>
+<!-- do not include this row <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >-->
