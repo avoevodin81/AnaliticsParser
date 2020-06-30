@@ -13,6 +13,7 @@ import utils.XmlUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class SimpleTestSuiteCreation {
 
@@ -25,7 +26,7 @@ public class SimpleTestSuiteCreation {
         List<Test> tests = new ArrayList<>();
         notPassedTests.forEach(testName -> {
             Test test = new Test();
-            test.setName(testName.substring(testName.lastIndexOf('.') + 1));
+            test.setName(testName.substring(testName.lastIndexOf('.') + 1) + "_" + new Random().nextInt(100));
             TestClass testClass = new TestClass();
             testClass.setName(testName);
             test.setTestClass(testClass);
